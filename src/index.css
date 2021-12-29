@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  /* Colors */
+  --dark-blue: 209 23% 22%;
+  --vary-dark-blue: 207 26% 17%;
+  --white: 0 0% 100%;
+
+  /* font family */
+  --ff-sans: 'Nunito Sans', sans-serif;
+
+  /* font weight */
+  --fw-bold: 800;
+  --fw-semi-bold: 600;
+  --fw-light: 300;
+
+  /* font-size */
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+
+  /* border */
+  --border-none: 0;
+  --rounded-input: 5px;
+
+  /* box-shadow */
+  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  
+}
+
+/* ------------------ */
+/* Reset              */
+/* ------------------ */
+
+/* Box sizing rule */
+*,
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins */
+body, 
+h1, h2, h3, h4, h5, h6,
+p, figure, li {
+  margin: 0;
+}
+
+/* Remove list styles */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+
+/* html default props */
+html {
+  scroll-behavior: smooth;
+}
+
+/* body default props */
+body {
+  min-height: 100vh;
+  font-family: var(--ff-sans);
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  background-color: hsl(var(--vary-dark-blue));
+}
+
+/* make a easier to work with */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* make image easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form element easier to work with */
+input, button,
+textarea, select {
+  font: inherit
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------ */
+/* Utility classes    */
+/* ------------------ */
+
+/* general */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 100rem;
+}
+
+/* colors */
+.bg-dark-blue {background-color: hsl(var(--dark-blue));}
+.bg-vary-dark-blue {background-color: hsl(var(--vary-dark-blue));}
+
+.txt-white { color: hsl(var(--white))}
+
+/* typography */
+
+.fw-bold { font-weight: var(--fw-bold);}
+.fw-semi-bold { font-weight: var(--semi-bold);}
+.fw-light { font-weight: var(--fw-light);}
+
+.fs-600 { font-size: var(--fs-600);}
+.fs-500 { font-size: var(--fs-500);}
+.fs-400 { font-size: var(--fs-400);}
+.fs-300 { font-size: var(--fs-300);}
+
+
+/* ------------------ */
+/* Components         */
+/* ------------------ */
+
+.card {
+  min-width: 16rem;
+  border-radius: var(--rounded-input);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.card .flag {
+  height: 10rem;
+  border-radius: var(--rounded-input) var(--rounded-input) 0 0;
+}
+
+.card > *:not(.flag) {
+  margin: 1.5em
+}
+
+.card > *:not(.flag) h3 {
+  margin: 1em 0; 
+}
+
+.card > *:not(.flag) p {
+  color: hsl(var(--white) / .5);
+}
+
+.btn {
+  background-color: hsl(var(--dark-blue));
+  border-radius: var(--rounded-input);
+  box-shadow: var(--shadow);
+  padding: .5em 1em;
+  width: fit-content;
+}
+
+.flag {
+  background-size:cover;
+  background-position: center center;
+  width: 100%;
+}
+
+/* ------------------ */
+/* Custom Styles      */
+/* ------------------ */
+
+.main-header {
+  padding-block: 1.5em;;
+}
+
+.home {
+  padding-block: 3em;
+}
+
+.home .container {
+  --flow-space: 4em;
+}
+
+.home .container form {
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.home .container form > div:first-child {
+  --gap: 1.5em;
+  padding: 1em 1.5em;
+  min-width: 30%;
+  border-radius: var(--rounded-input);
+  box-shadow: var(--shadow);
+  
+}
+
+.home .container form > div:first-child input{
+  background-color: transparent;
+  color: inherit;
+  caret-color: hsl(var(--white));
+  border: var(--border-none);
+  flex: 1;
+}
+
+.home .container form > select {
+  background-color: hsl(var(--dark-blue));
+  box-shadow: var(--shadow);
+  color: inherit;
+  width: 12em;
+  padding: 1em 1.5em;
+  border: var(--border-none);
+  border-radius: var(--rounded-input);
+}
+
+.home .container form > div:first-child input:focus,
+.home .container form > select:focus{
+  outline: var(--border-none);
+}
+
+.home .container .countries {
+  --gap: 2.5em;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* 404 */
+.not-found {
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* country page */
+.country {
+  margin-top: 3em;
+
+}
+
+/* content */
+.country > div {
+  --gap: 4em;
+  flex-wrap: wrap;
+  margin-top: 2.5em;
+  /* min-width: 15em; */
+}
+
+/* img */
+.country > div > div:first-child {
+  width: 35em;
+  box-shadow: var(--shadow);
+}
+
+.country > div > div:first-child img {
+  width: 100%;
+}
+
+/* content */
+.country > div .content {
+  --flow-spacing: 3rem;
+  margin-top: 2em;
+}
+
+.country > div .content p {
+  color: hsl(var(--white) / .5);
+}
+
+.country > div .content p .title{
+  margin-right: .5em;
+}
+
+/* borders */
+.borders {
+  --gap: 1em;
+  flex-wrap: wrap;
+  margin-top: 3em;
+  width: 100%;
+}
+
+.borders h3{
+  padding-right: .5em;
+}
+
+.borders .border{
+  background-color: hsl(var(--dark-blue));
+  padding: 0.3em 1.5em;
+  border-radius: var(--rounded-input);
+  box-shadow: var(--shadow);
+}
+
+
+/* route animation */
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
