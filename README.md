@@ -28,8 +28,6 @@ Users should be able to:
 
 ![desktop home](./design/desktop-design-home-dark.jpg)
 ![desktop detail](./design/desktop-design-detail-dark.jpg)
-![mobile home](./design/mobile-design-home-dark.jpg)
-![mobile detail](./design/mobile-design-detail-dark.jpg)
 
 <!-- <!-- ### Links -->
 
