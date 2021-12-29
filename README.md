@@ -29,7 +29,7 @@ Users should be able to:
 ![desktop home](./design/desktop-design-home-dark.jpg)
 ![desktop detail](./design/desktop-design-detail-dark.jpg)
 
-<!-- <!-- ### Links -->
+### Links 
 
 - Solution URL: [solution URL](https://github.com/joey493/Frontend-Mentor-REST-Countries-API)
 - Live Site URL: [live site URL](https://tender-visvesvaraya-3673ed.netlify.app/)
